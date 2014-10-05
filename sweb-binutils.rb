@@ -26,6 +26,12 @@ class SwebBinutils < Formula
   mirror 'http://ftp.gnu.org/gnu/binutils/binutils-2.24.tar.gz'
   sha1 '1b2bc33003f4997d38fadaa276c1f0321329ec56'
 
+  bottle do
+    root_url "http://static.ghostlyrics.net/homebrew"
+    sha1 "79c84de755013ddd377da3e1f37f10910ccbf323" => :mavericks
+    sha1 "9296897e04a62768b654dd86e1908060e49ea986" => :yosemite
+  end
+
   def install
     system "./configure", "--enable-debug",
                           "--disable-dependency-tracking",

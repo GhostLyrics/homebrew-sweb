@@ -6,6 +6,12 @@ class SwebGcc < Formula
   mirror "ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.9.1/gcc-4.9.1.tar.bz2"
   sha1 "3f303f403053f0ce79530dae832811ecef91197e"
 
+  bottle do
+    root_url "http://static.ghostlyrics.net/homebrew"
+    sha1 "c7921169bf298cc5db620c3871ab40f6c5d082a6" => :mavericks
+    sha1 "b48e2074fd037e89f37bb8dfceda1adee7d57902" => :yosemite
+  end
+
   def arch
     if Hardware::CPU.type == :intel
       if MacOS.prefer_64_bit?
