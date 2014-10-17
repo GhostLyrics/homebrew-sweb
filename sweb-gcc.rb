@@ -8,8 +8,9 @@ class SwebGcc < Formula
 
   bottle do
     root_url "http://static.ghostlyrics.net/homebrew"
-    sha1 "c7921169bf298cc5db620c3871ab40f6c5d082a6" => :mavericks
-    sha1 "b48e2074fd037e89f37bb8dfceda1adee7d57902" => :yosemite
+    revision 1
+    sha1 "733559a56baa8dabc2799728ba17faa1cac71edf" => :mavericks
+    sha1 "4730e1eccf8d969894fa53e1832c1b338987370c" => :yosemite
   end
 
   def arch
@@ -103,8 +104,6 @@ class SwebGcc < Formula
     # Handle conflicts between GCC formulae and avoid interfering
     # with system compilers.
     # Since GCC 4.8 libffi stuff are no longer shipped.
-    # Rename libiberty.a.
-    Dir.glob(prefix/"**/libiberty.*") { |file| add_suffix file, version_suffix }
     # Rename man7.
     Dir.glob(man7/"*.7") { |file| add_suffix file, version_suffix }
     # Even when suffixes are appended, the info pages conflict when
