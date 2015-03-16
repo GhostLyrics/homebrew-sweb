@@ -5,19 +5,21 @@ You can use this homebrew formula as well as the prepackaged bottles for the [Be
 [Betriebssysteme]: https://swebwiki.student.iaik.tugraz.at/start
 [TU Graz]: http://tugraz.at
 
+## TL;DR
+
+    brew tap ghostlyrics/homebrew-sweb && brew install sweb-gcc qemu cmake cloog
+
 ## Installation
 
 This repository contains formulas for [homebrew][] for the cross-compiled `binutils` and `gcc`. Homebrew will automatically fetch and install the required dependencies for the cross-compiler. To add the repository and install the packages use the following commands after installing homebrew.
 
-[homebrew]: http://homebrew.sh
+Additionally you will need `cmake` for configuring your build environment, `qemu` to run SWEB in the emulator and `cloog` to compile it on OS X.
+
+[homebrew]: http://brew.sh
 
     brew tap ghostlyrics/homebrew-sweb
     brew update
-    brew install sweb-gcc
-
-In order to run SWEB, you will also need the `qemu` package.
-
-    brew install qemu
+    brew install sweb-gcc cloog cmake qemu
 
 ## Usage
 
