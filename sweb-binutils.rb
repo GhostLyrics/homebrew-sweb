@@ -28,8 +28,8 @@ class SwebBinutils < Formula
 
   bottle do
     root_url "http://static.ghostlyrics.net/homebrew"
-    sha1 "79c84de755013ddd377da3e1f37f10910ccbf323" => :mavericks
-    sha1 "9296897e04a62768b654dd86e1908060e49ea986" => :yosemite
+    revision 1
+    sha256 "c6ad597609efad398b92017c80bd3df530d60cf283502a725575b3acb680037a" => :yosemite
   end
 
   def install

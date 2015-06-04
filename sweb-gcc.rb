@@ -8,9 +8,8 @@ class SwebGcc < Formula
 
   bottle do
     root_url "http://static.ghostlyrics.net/homebrew"
-    revision 1
-    sha1 "733559a56baa8dabc2799728ba17faa1cac71edf" => :mavericks
-    sha1 "4730e1eccf8d969894fa53e1832c1b338987370c" => :yosemite
+    revision 2
+    sha256 "1e9ddb9f880885dc74259f7c5193ce65d32413c31a8b4a759f5ea5ed05a59729" => :yosemite
   end
 
   def arch
