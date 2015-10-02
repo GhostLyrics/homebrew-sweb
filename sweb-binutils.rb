@@ -30,6 +30,7 @@ class SwebBinutils < Formula
     root_url "http://static.ghostlyrics.net/homebrew"
     revision 1
     sha256 "c6ad597609efad398b92017c80bd3df530d60cf283502a725575b3acb680037a" => :yosemite
+    sha256 "bb41ceea15a2783fd8d49b74f5da122369dc258690558114f00628028afb1d42" => :el_capitan
   end
 
   def install
