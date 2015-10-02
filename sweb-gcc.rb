@@ -7,8 +7,8 @@ class SwebGcc < Formula
   sha1 "3f303f403053f0ce79530dae832811ecef91197e"
 
   bottle do
-    root_url "http://static.ghostlyrics.net/homebrew"
-    revision 2
+    root_url "https://icg.tugraz.at/~skiba/homebrew"
+    revision 3
     sha256 "1e9ddb9f880885dc74259f7c5193ce65d32413c31a8b4a759f5ea5ed05a59729" => :yosemite
     sha256 "2e217a8a677cbf0970bf12e9215ffd2e36f0395413db50e77616809d48af3d21" => :el_capitan
   end
