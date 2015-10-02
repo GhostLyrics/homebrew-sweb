@@ -1,16 +1,15 @@
-require "formula"
-
 class SwebGcc < Formula
-  homepage "http://gcc.gnu.org"
-  url "http://ftpmirror.gnu.org/gcc/gcc-4.9.1/gcc-4.9.1.tar.bz2"
-  mirror "ftp://gcc.gnu.org/pub/gcc/releases/gcc-4.9.1/gcc-4.9.1.tar.bz2"
-  sha1 "3f303f403053f0ce79530dae832811ecef91197e"
+  desc "GNU compiler collection"
+  homepage "https://gcc.gnu.org"
+  url "http://ftpmirror.gnu.org/gcc/gcc-5.2.0/gcc-5.2.0.tar.bz2"
+  mirror "https://ftp.gnu.org/gnu/gcc/gcc-5.2.0/gcc-5.2.0.tar.bz2"
+  sha256 "5f835b04b5f7dd4f4d2dc96190ec1621b8d89f2dc6f638f9f8bc1b1014ba8cad"
 
   bottle do
-    root_url "https://icg.tugraz.at/~skiba/homebrew"
-    revision 3
-    sha256 "1e9ddb9f880885dc74259f7c5193ce65d32413c31a8b4a759f5ea5ed05a59729" => :yosemite
-    sha256 "a74e6bc91f28ad97b336633a9e9299d9c5d20d0e4190230ba37e314332bcb16e" => :el_capitan
+  #   root_url "https://icg.tugraz.at/~skiba/homebrew"
+  #   revision 3
+  #   sha256 "1e9ddb9f880885dc74259f7c5193ce65d32413c31a8b4a759f5ea5ed05a59729" => :yosemite
+  #   sha256 "a74e6bc91f28ad97b336633a9e9299d9c5d20d0e4190230ba37e314332bcb16e" => :el_capitan
   end
 
   def arch
@@ -39,6 +38,7 @@ class SwebGcc < Formula
   depends_on "mpfr"
 
   fails_with :gcc_4_0
+  fails_with :llvm
 
   # GCC bootstraps itself, so it is OK to have an incompatible C++ stdlib
   cxxstdlib_check :skip
@@ -51,12 +51,6 @@ class SwebGcc < Formula
 
   def version_suffix
     version.to_s.slice(/\d\.\d/)
-  end
-
-  # Fix 10.10 issues: https://gcc.gnu.org/bugzilla/show_bug.cgi?id=61407
-  patch do
-    url "https://gcc.gnu.org/bugzilla/attachment.cgi?id=33180"
-    sha1 "def0cb036a255175db86f106e2bb9dd66d19b702"
   end
 
   def install
@@ -94,6 +88,13 @@ class SwebGcc < Formula
     ]
 
     mkdir "build" do
+      unless MacOS::CLT.installed?
+        # For Xcode-only systems, we need to tell the sysroot path.
+        # "native-system-headers" will be appended
+        args << "--with-native-system-header-dir=/usr/include"
+        args << "--with-sysroot=#{MacOS.sdk_path}"
+      end
+
       system "../configure", *args
       system "make", "all-gcc"
       system "make", "install-gcc"
