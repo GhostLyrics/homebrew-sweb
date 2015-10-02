@@ -10,7 +10,7 @@ class SwebGcc < Formula
     root_url "https://icg.tugraz.at/~skiba/homebrew"
     revision 3
     sha256 "1e9ddb9f880885dc74259f7c5193ce65d32413c31a8b4a759f5ea5ed05a59729" => :yosemite
-    sha256 "2e217a8a677cbf0970bf12e9215ffd2e36f0395413db50e77616809d48af3d21" => :el_capitan
+    sha256 "a74e6bc91f28ad97b336633a9e9299d9c5d20d0e4190230ba37e314332bcb16e" => :el_capitan
   end
 
   def arch

@@ -10,7 +10,7 @@ class SwebBinutils < Formula
     root_url "https://icg.tugraz.at/~skiba/homebrew"
     revision 2
     sha256 "c6ad597609efad398b92017c80bd3df530d60cf283502a725575b3acb680037a" => :yosemite
-    sha256 "bb41ceea15a2783fd8d49b74f5da122369dc258690558114f00628028afb1d42" => :el_capitan
+    sha256 "ec25f1a5e7d7f3b51a62930ecde198a59538c1a4bc950ee613751b3cd36726a8" => :el_capitan
   end
 
   def arch
