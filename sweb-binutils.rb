@@ -6,10 +6,8 @@ class SwebBinutils < Formula
   sha256 "82a40a37b13a12facb36ac7e87846475a1d80f2e63467b1b8d63ec8b6a2b63fc"
 
   bottle do
-    # root_url "https://icg.tugraz.at/~skiba/homebrew"
-    # revision 2
-    # sha256 "c6ad597609efad398b92017c80bd3df530d60cf283502a725575b3acb680037a" => :yosemite
-    # sha256 "ec25f1a5e7d7f3b51a62930ecde198a59538c1a4bc950ee613751b3cd36726a8" => :el_capitan
+    root_url "https://icg.tugraz.at/~skiba/homebrew"
+    sha256 "741cf4ffd83253601846286fbe2f77bf70a79f264f869fafce8ab0253e2e003a" => :el_capitan
   end
 
   def arch
