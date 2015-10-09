@@ -27,7 +27,7 @@ class SwebBinutils < Formula
   end
 
   def osmajor
-   `uname -r`.chomp
+    `uname -r`.chomp
   end
 
   def install
@@ -54,8 +54,5 @@ class SwebBinutils < Formula
 
   test do
     assert_match /main/, shell_output("#{bin}/gnm #{bin}/gnm")
-
-    # assert `#{bin}/gnm #{bin}/gnm`.include? 'main'
-    # assert_equal 0, $?.exitstatus
   end
 end
