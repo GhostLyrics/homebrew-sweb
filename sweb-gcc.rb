@@ -44,7 +44,12 @@ class SwebGcc < Formula
   # The bottles are built on systems with the CLT installed, and do not work
   # out of the box on Xcode-only systems due to an incorrect sysroot.
   def pour_bottle?
-    MacOS::CLT.installed?
+    if MacOS::CLT.installed?
+      true
+    else
+      opoo "Xcode CLT not installed => Not pouring bottle. Will install from source."
+      false
+    end
   end
 
   def version_suffix
@@ -54,7 +59,6 @@ class SwebGcc < Formula
   def install
     # GCC will suffer build errors if forced to use a particular linker.
     ENV.delete "LD"
-
 
     # C, C++, ObjC compilers are always built
     languages = %w[c c++]
@@ -98,7 +102,7 @@ class SwebGcc < Formula
       system "make", "install-gcc"
     end
 
-    system "ln", "-s", "#{Formula["sweb-binutils"].opt_prefix}/i686-linux-gnu", "#{prefix}/i686-linux-gnu"
+    ln_s("#{Formula["sweb-binutils"].opt_prefix}/i686-linux-gnu", "#{prefix}/i686-linux-gnu")
 
     # Handle conflicts between GCC formulae and avoid interfering
     # with system compilers.
@@ -108,14 +112,12 @@ class SwebGcc < Formula
     # Even when suffixes are appended, the info pages conflict when
     # install-info is run. TODO fix this.
     info.rmtree
-
   end
 
-  def add_suffix file, suffix
+  def add_suffix(file, suffix)
     dir = File.dirname(file)
     ext = File.extname(file)
     base = File.basename(file, ext)
     File.rename file, "#{dir}/#{base}-#{suffix}#{ext}"
   end
-
 end
