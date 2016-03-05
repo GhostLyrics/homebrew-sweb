@@ -5,10 +5,10 @@ class SwebGcc < Formula
   mirror "https://ftp.gnu.org/gnu/gcc/gcc-5.3.0/gcc-5.3.0.tar.bz2"
   sha256 "b84f5592e9218b73dbae612b5253035a7b34a9a1f7688d2e1bfaaf7267d5c4db"
 
-#  bottle do
-#    root_url "https://icg.tugraz.at/~skiba/homebrew"
-#    sha256 "0f69e18bf5dcd7930efb88925c112f02bf3ee12e93bbdcc5a70a5fd29308853e" => :el_capitan
-#  end
+  bottle do
+    root_url "https://icg.tugraz.at/~skiba/homebrew"
+    sha256 "275f8a4bca197cbc6fe2a54618c7fe15a22733c0e04c27e2d631a779ca45b527" => :el_capitan
+  end
 
   def arch
     if Hardware::CPU.type == :intel

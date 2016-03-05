@@ -5,10 +5,10 @@ class SwebBinutils < Formula
   mirror "https://ftp.gnu.org/gnu/binutils/binutils-2.26.tar.gz"
   sha256 "9615feddaeedc214d1a1ecd77b6697449c952eab69d79ab2125ea050e944bcc1"
 
-#  bottle do
-#    root_url "https://icg.tugraz.at/~skiba/homebrew"
-#    sha256 "741cf4ffd83253601846286fbe2f77bf70a79f264f869fafce8ab0253e2e003a" => :el_capitan
-#  end
+  bottle do
+    root_url "https://icg.tugraz.at/~skiba/homebrew"
+    sha256 "f85373fd1ae79150afe0f572321d5fb77702c0acd124d03ad7a2e890051ef79e" => :el_capitan
+  end
 
   def arch
     if Hardware::CPU.type == :intel
