@@ -1,3 +1,5 @@
+**This project is unmaintained. Feel free to fork and modify but do not expect further development in this repository.**
+
 # Cross compiler: GCC for SWEB (i686-linux-gnu)
 
 You can use this homebrew formula as well as the prepackaged bottles for the [Betriebssysteme][] course at the [TU Graz][].
